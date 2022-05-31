@@ -1,10 +1,15 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import App from './App';
+import React from 'react'
+import ReactDOM from 'react-dom'
+import App from './App'
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(
-  <React.StrictMode>
+// Import to connect reduxt to react.
+import store from './redux/store'
+import { Provider } from 'react-redux'
+
+ReactDOM.render(
+  // Provider and store here.
+  <Provider store={store}>
     <App />
-  </React.StrictMode>
-);
+  </Provider>,
+  document.getElementById('root')
+)
