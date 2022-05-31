@@ -4,11 +4,7 @@ import  { ActionTypes } from '../constants/action-types';
 
 // Initial state of the reducer.
 const initialState = {
-    products:[{
-        id: 1,
-        title: "Liam",
-        category: "Programmer"
-    }]
+    products:[]
 };
 
 // Reducers require two parameters. The original/initial state, and the action that is to be passed into it.
@@ -16,7 +12,7 @@ const initialState = {
 export const productReducer = (state = initialState, {type, payload}) => {
     switch (type) {
         case ActionTypes.SET_PRODUCTS:
-            return state;
+            return {...state, products:payload};
         default:
             return state;
     };
